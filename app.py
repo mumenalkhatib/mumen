@@ -2,12 +2,7 @@ from flask import Flask, render_template
 import random
 app = Flask(__name__)
 
-@app.route('/<name>')
-def name(name):
-	title = "Home"
-	return render_template("home.html" , title=title , name=name)
-
-@app.route('/home.html')
+@app.route('/')
 def home():
 	title = "Home"
 	return render_template("home.html" , title=title ,)

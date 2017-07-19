@@ -1,0 +1,15 @@
+{% extends "index.html"%}
+		
+		{%block body%}
+
+		{% if display == True  %}
+		<ol>
+		{% for string in list %}
+		<li class="cls1">{{string}}</li>
+		{% endfor %}
+		</ol>
+		{% elif display == False %}
+		<image src ="static/pizza.jpg"/>
+		{% endif %}
+
+{%endblock%}

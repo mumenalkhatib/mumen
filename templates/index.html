@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+<title>{{title}}</title>
+
+	<head>
+
+		<title>
+			index
+		</title>
+
+		<link rel="stylesheet" type="text/css" href="static/main.css">
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script>
+
+		$(document).ready(function(){
+    		$("#img1").click(function(){
+        		$("#mumen2").toggle();
+		});
+
+    		$("#img2").click(function(){
+        		$("#mumen3").toggle();
+		});
+
+    		$("#img3").click(function(){
+        		$("#mumen4").toggle();
+		});
+		});
+
+
+		</script>
+
+	</head>
+
+
+<body background="static/imagee.jpg">
+
+		<div class="cls10">
+
+		<a href="home.html" class="cls11">
+		<img src="static/home.png">
+		</img> 
+		</a>
+
+		<a href="about me.html" class="cls">
+		<img src="static/about me.png">
+		</img> 
+		</a>
+
+		<a href="hobbies.html" class="cls">
+		<img src="static/hobbies.png">
+		</img> 
+		</a>
+
+		<a href="we code.html" class="cls">
+		<img src="static/we code.png">
+		</img> 
+		</a>
+
+		<a href="contact me.html" class="cls">
+		<img src="static/contact-me.png">
+		</img> 
+		</a> 
+
+		<a href="list.html" class="cls">
+		<img src="static/contact-me.png">
+		</img> 
+		</a> 
+
+	</div>
+	{%block body%} {%endblock%}
+	</body>
+
+</html>

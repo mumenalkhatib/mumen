@@ -1,0 +1,17 @@
+{% extends "index.html"%}
+		
+		{%block body%}
+
+		{% if name %}
+			<h1 class="cls1">Welcome {{name}}</h1>
+		{% else %}
+			<h1 class="cls1">Welcome user </h1>
+		{% endif %}
+
+		<p class="cls6">Hello! My name is Mumen Alkhatib, 
+			this is my blog where I share stuff about myself. I hope you like it! 
+		</p>
+
+		<image src ="static/photo!.jpg" class="cls7"/>
+
+{%endblock%}

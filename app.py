@@ -7,6 +7,11 @@ def home():
 	title = "Home"
 	return render_template("home.html" , title=title ,)
 
+@app.route('/home.html')
+def home():
+	title = "Home"
+	return render_template("home.html" , title=title ,)
+
 @app.route('/contact me.html')
 def contact_me():
 	title = "Contact_me"

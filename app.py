@@ -29,12 +29,5 @@ def we_code():
 	title = "We_Code"
 	return render_template("we code.html" , title=title ,)
 
-@app.route('/list.html')
-def list():
-	title = "List"
-	List = ["mumen" , "minymoh" , "majd" , "belal" , "amin"]
-	display = True 
-	return render_template("list.html" , title=title , list=List , display=display)
-
 if __name__ == "__main__":
 	app.run()

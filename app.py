@@ -46,7 +46,7 @@ def form():
 	return render_template ("form.html" , name=name , email=email , comment=comment )
 
 
-@app.route('/showall')
+@app.route('/showall.html')
 def showall():
 	contactsTable = db["contacs"]
 	allcontacs = list (contactsTable.all())

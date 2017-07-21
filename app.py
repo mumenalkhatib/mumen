@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request
 import random
+import dataset 
+
+db = dataset.connect("postgres://sqtgiyiuserjtd:a2e990bf3dc72c62c59e389afbbd31ede6690fc0a67ac79ca4de5b605d75a70f@ec2-23-21-96-159.compute-1.amazonaws.com:5432/d3d2m0i1jjdgd")
 app = Flask(__name__)
 
 
@@ -29,23 +32,25 @@ def we_code():
 	title = "We_Code"
 	return render_template("we code.html" , title=title ,)
 
-@app.route('/form.html')
+@app.route('/form.html' , methods=["POST"])
 def form():
-	title = "form"
-	return render_template("form.html" , title=title ,)
+	form =request.form
+	name =form["name"]
+	email =form["email"]
+	comment =form["comment"]
 
-@app.route('/contactme1.html' , methods=["GET","POST"])
-def contact_me1():
-	title = "Contact_me"
-	if request.method == "GET":
-		return render_template("contact me.html" , title=title)
-	else: 
-		name = request.form["name"]
-		email = request.form["email"]
-		comment = request.form["comment"]
-		return render_template("form.html" , name=name , email=email , comment=comment)
+	contactsTable = db["contacs"]
+	entry = {"name":name , "email":email , "comment":comment}
+	contactsTable.insert(entry)
+	print list (contactsTable.all())
+	return render_template ("form.html" , name=name , email=email , comment=comment )
 
 
+@app.route('/showall')
+def showall():
+	contactsTable = db["contacs"]
+	allcontacs = list (contactsTable.all())
+	return render_template ("showall.html" , contacts = allcontacs)
 
 
 if __name__ == "__main__":

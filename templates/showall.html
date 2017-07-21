@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+		
+	{% block body %}
+
+<div class="cls1">
+	Contacs Table
+	<table>
+
+		<tr>
+			<td>Name</td>
+
+			<td>Email</td>
+
+			<td>Comment</td>
+		</tr>
+		{% for person in contacts %}
+		<tr>
+			<td>{{person.name}} , </td>
+
+			<td>{{person.email}} , </td>
+			
+			<td>{{person.comment}} , </td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+	{% endblock %}

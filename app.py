@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import random
 app = Flask(__name__)
 
@@ -28,6 +28,25 @@ def hobbies():
 def we_code():
 	title = "We_Code"
 	return render_template("we code.html" , title=title ,)
+
+@app.route('/form.html')
+def form():
+	title = "form"
+	return render_template("form.html" , title=title ,)
+
+@app.route('/contactme1.html' , methods=["GET","POST"])
+def contact_me1():
+	title = "Contact_me"
+	if request.method == "GET":
+		return render_template("contact me.html" , title=title)
+	else: 
+		name = request.form["name"]
+		email = request.form["email"]
+		comment = request.form["comment"]
+		return render_template("form.html" , name=name , email=email , comment=comment)
+
+
+
 
 if __name__ == "__main__":
 	app.run()

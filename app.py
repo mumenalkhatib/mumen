@@ -32,7 +32,7 @@ def we_code():
 	title = "We_Code"
 	return render_template("we code.html" , title=title ,)
 
-@app.route('/form.html' , methods=["POST"])
+@app.route('/form.html' , methods=["GET", "POST"])
 def form():
 	form =request.form
 	name =form["name"]
